@@ -8,7 +8,7 @@
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
-//Pin Nymbers
+//Pin Numbers
 #define ONE_WIRE_BUS_PIN 6
 
 //Library Stuff
