@@ -20,17 +20,15 @@ DeviceAddress blackProbe = { 0x28, 0xFF, 0x1A, 0xAA, 0x62, 0x15, 0x03, 0x20 }; /
 DeviceAddress redProbe   = { 0x28, 0xFF, 0xA9, 0xB4, 0x62, 0x15, 0x03, 0x0C }; //Red Address
 DeviceAddress greenProbe = { 0x28, 0xFF, 0xF5, 0xB3, 0x62, 0x15, 0x03, 0x3E }; //Green Address
 
-void setup()
-{
+void setup() {
   sensors.begin();
   sensors.setResolution(blackProbe, 10);
   sensors.setResolution(redProbe, 10);
   sensors.setResolution(greenProbe, 10);
 }
 
-void loop()
-{
-  //delay(delay_time);
+void loop() {
+  
   sensors.requestTemperatures();
 
   delay(2000);
@@ -55,17 +53,14 @@ void loop()
   printTemperature(greenProbe);
 }
 
-void printTemperature(DeviceAddress deviceAddress)
-{
+void printTemperature(DeviceAddress deviceAddress) {
 
   float tempC = sensors.getTempC(deviceAddress);
 
-  if (tempC == -127.00)
-  {
+  if (tempC == -127.00) {
     lcd.print("Failed");
   }
-  else
-  {
+  else {
     lcd.print(tempC);
   }
 }
