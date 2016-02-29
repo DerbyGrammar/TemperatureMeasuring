@@ -7,7 +7,6 @@
 #include <DallasTemperature.h>
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-const int switchPin = 6;
 
 //Pin Nymbers
 #define ONE_WIRE_BUS_PIN 6
@@ -27,7 +26,6 @@ void setup()
   sensors.setResolution(black_probe, 10);
   sensors.setResolution(red_probe, 10);
   sensors.setResolution(green_probe, 10);
-  pinMode(switchPin, INPUT);
 }
 
 void loop()
