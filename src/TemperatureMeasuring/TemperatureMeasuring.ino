@@ -62,7 +62,7 @@ void printTemperature(DeviceAddress deviceAddress) {
 
   float tempC = sensors.getTempC(deviceAddress);
 
-  if (!tempC == -127.00) {
+  if (tempC != -127.00) {
     lcd.print(tempC);
   }
   else {
