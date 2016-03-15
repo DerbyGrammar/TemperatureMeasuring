@@ -30,6 +30,8 @@ void setup() {
   sensors.setResolution(greenProbe, 10);
 
   delayTime = 2000;
+
+  lcd.begin(16, 2);
 }
 
 void loop() {
@@ -37,7 +39,6 @@ void loop() {
   sensors.requestTemperatures();
 
   delay(delayTime);
-  lcd.begin(16, 2);
   lcd.print("DGS Racing");
   lcd.setCursor(0, 1);
   lcd.print("Black = ");
