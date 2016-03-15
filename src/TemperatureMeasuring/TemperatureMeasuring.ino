@@ -5,8 +5,8 @@
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
-#include <LiquidCrystal.h>
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 /* Pin Numbers */
 #define ONE_WIRE_BUS_PIN 6
@@ -30,6 +30,9 @@ void setup() {
   sensors.setResolution(greenProbe, 10);
 
   delayTime = 2000;
+
+  lcd.begin();
+  lcd.backlight();
 }
 
 void loop() {
@@ -37,7 +40,6 @@ void loop() {
   sensors.requestTemperatures();
 
   delay(delayTime);
-  lcd.begin(16, 2);
   lcd.print("DGS Racing");
   lcd.setCursor(0, 1);
   lcd.print("Black = ");
